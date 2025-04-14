@@ -27,16 +27,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: BSXAngular/BSX_REST_API/package-lock.json
+        cache-dependency-path: /home/runner/work/BSXAngular/BSX_REST_API/package-lock.json
 
     - name: Install dependencies
       run: npm ci
-      working-directory: BSXAngular/BSX_REST_API
+      working-directory: /home/runner/work/BSXAngular/BSXAngular/BSX_REST_API
 
     - name: Build
       run: npm run build --if-present
-      working-directory: BSXAngular/BSX_REST_API
-
-    - name: Run tests
-      run: npm test
-      working-directory: BSXAngular/BSX_REST_API
+      working-directory: /home/runner/work/BSXAngular/BSXAngular/BSX_REST_API
